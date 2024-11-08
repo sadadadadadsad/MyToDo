@@ -1,0 +1,11 @@
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\bin\Debug\net6.0\MyToDo.Shared.deps.json
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\bin\Debug\net6.0\MyToDo.Shared.dll
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\bin\Debug\net6.0\MyToDo.Shared.pdb
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.AssemblyInfoInputs.cache
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.AssemblyInfo.cs
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.csproj.CoreCompileInputs.cache
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.dll
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\refint\MyToDo.Shared.dll
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\MyToDo.Shared.pdb
+C:\Users\14011\source\repos\MyToDO\MyToDo.Shared\obj\Debug\net6.0\ref\MyToDo.Shared.dll
