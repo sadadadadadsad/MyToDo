@@ -42,3 +42,8 @@ C:\Users\14011\source\repos\MyToDO\MyToDO\obj\Debug\net6.0-windows\GeneratedInte
 C:\Users\14011\source\repos\MyToDO\MyToDO\obj\Debug\net6.0-windows\Views\AboutView.g.cs
 C:\Users\14011\source\repos\MyToDO\MyToDO\obj\Debug\net6.0-windows\Views\AboutView.baml
 C:\Users\14011\source\repos\MyToDO\MyToDO\bin\Debug\net6.0-windows\RestSharp.dll
+C:\Users\14011\source\repos\MyToDO\MyToDO\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\14011\source\repos\MyToDO\MyToDO\bin\Debug\net6.0-windows\MyToDo.Shared.dll
+C:\Users\14011\source\repos\MyToDO\MyToDO\bin\Debug\net6.0-windows\MyToDo.Shared.pdb
+C:\Users\14011\source\repos\MyToDO\MyToDO\obj\Debug\net6.0-windows\Views\ProgressView.g.cs
+C:\Users\14011\source\repos\MyToDO\MyToDO\obj\Debug\net6.0-windows\Views\ProgressView.baml

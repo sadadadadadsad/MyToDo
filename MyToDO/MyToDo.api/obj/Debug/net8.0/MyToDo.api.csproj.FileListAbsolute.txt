@@ -135,3 +135,7 @@ C:\Users\14011\source\repos\MyToDO\MyToDo.api\bin\Debug\net8.0\Microsoft.EntityF
 C:\Users\14011\source\repos\MyToDO\MyToDo.api\bin\Debug\net8.0\MyToDo.Shared.dll
 C:\Users\14011\source\repos\MyToDO\MyToDo.api\bin\Debug\net8.0\MyToDo.Shared.pdb
 C:\Users\14011\source\repos\MyToDO\MyToDo.api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\14011\source\repos\MyToDO\MyToDo.api\bin\Debug\net8.0\MyToDo.api.staticwebassets.endpoints.json
+C:\Users\14011\source\repos\MyToDO\MyToDo.api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\14011\source\repos\MyToDO\MyToDo.api\obj\Debug\net8.0\staticwebassets\msbuild.MyToDo.api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\14011\source\repos\MyToDO\MyToDo.api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

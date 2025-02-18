@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "HJJkIMmcOxIyTcNokl9MpuFAFBPsAL5MGHuOfcgrd/g=",
+  "Hash": "U6A6WuAUDogmsF5KNGhnCAy80K4JdLzbxtMaX2Ngw7c=",
   "Source": "MyToDo.api",
   "BasePath": "_content/MyToDo.api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

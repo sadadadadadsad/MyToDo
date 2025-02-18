@@ -1,6 +1,9 @@
-﻿using MyToDO.Common.Models;
+﻿using MyToDo.Shared.Dtos;
+using MyToDO.Service;
 using Prism.Commands;
+using Prism.Ioc;
 using Prism.Mvvm;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,13 +13,15 @@ using System.Threading.Tasks;
 
 namespace MyToDO.ViewModels
 {
-   public class ToDoViewModel:BindableBase
+   public class ToDoViewModel: NavigationViewModel
     {
-        public ToDoViewModel()
+        public ToDoViewModel(IToDoService service,IContainerProvider containerProvider)
+            :base(containerProvider)
         {
             toDoDtos = new ObservableCollection<ToDoDto>();
-            CreateToDoList();
             AddToDoCommand = new DelegateCommand(AddToDo);
+            this.service = service;
+
         }
         private bool isRightDrawerOpen;
         /// <summary>
@@ -36,6 +41,8 @@ namespace MyToDO.ViewModels
         }
 
         private ObservableCollection<ToDoDto> toDoDtos;
+        private readonly IToDoService service;
+
         public DelegateCommand AddToDoCommand { get; private set; }
 
         public ObservableCollection<ToDoDto> ToDoDtos
@@ -43,16 +50,34 @@ namespace MyToDO.ViewModels
             get { return toDoDtos; }
             set { toDoDtos = value; RaisePropertyChanged(); }
         }
-        void CreateToDoList()
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+       async void GetDataAsync()
         {
-            for (int i = 0; i < 20; i++)
+            UpdateLoading(true);
+         var todoResult=  await service.GetAllAsync(new MyToDo.Shared.Parameters.QueryParameter() 
             {
-                ToDoDtos.Add(new ToDoDto()
-                {
-                    Title="标题"+i,
-                    Content="测试数据"
-                });
+                PageIndex = 0,
+                PageSize = 100,
             }
+            );
+            if (todoResult.Status)
+            {
+                ToDoDtos.Clear();
+                foreach (var item in todoResult.Result.Items)
+                {
+                    ToDoDtos.Add(item);
+                }
+            }
+            UpdateLoading(false);
+
+        }
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
+            GetDataAsync();
         }
     }
 }

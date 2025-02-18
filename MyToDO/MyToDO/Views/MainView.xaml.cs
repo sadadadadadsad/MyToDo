@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using DryIoc;
+using MyToDO.Extensions;
+using Prism.Events;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MyToDO.Views
@@ -8,9 +11,18 @@ namespace MyToDO.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(IEventAggregator aggregator)
         {
             InitializeComponent();
+            //注册等待消息窗口
+            aggregator.Register(arg =>
+            {
+                DialogHost.IsOpen=arg.IsOpen;
+                if (DialogHost.IsOpen)
+                {
+                    DialogHost.DialogContent = new ProgressView();
+                }
+            });
             MenuBar.SelectionChanged += (s, e) =>
             {
                 drawerHost.IsLeftDrawerOpen = false;

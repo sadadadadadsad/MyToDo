@@ -29,7 +29,7 @@ namespace MyToDo.api.Service
                 await work.GetRepository<ToDo>().InsertAsync(dbToDo);
                 if (await work.SaveChangesAsync() > 0)
                 {
-                    return new ApiResponse(true, model);
+                    return new ApiResponse(true, dbToDo);
                 }
                 return new ApiResponse(false, "添加数据失败");
             }

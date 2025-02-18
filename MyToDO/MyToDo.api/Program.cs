@@ -22,7 +22,7 @@ namespace MyToDo.api
             builder.Services.AddDbContext<MyToDoContext>(options => {
                 var connectionString = builder.Configuration.GetConnectionString("ToDoConnection");
                 options.UseSqlite(connectionString);
-            }).AddUnitOfWork<MyToDoContext>()
+            }).AddUnitOfWork<MyToDoContext>() //通过配置中的路径进行连接
             .AddCustomRepository<ToDo,ToDoRepository>()
             .AddCustomRepository<Memo,MemoRepository>()
             .AddCustomRepository<User,UserRepository>()

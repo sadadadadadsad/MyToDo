@@ -1,4 +1,7 @@
-﻿using MyToDO.Common.Models;
+﻿
+using MyToDo.Shared.Dtos;
+using MyToDO.Common.Models;
+using MyToDO.Service;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -15,8 +18,9 @@ namespace MyToDO.ViewModels
         public DelegateCommand AddMemoCommand { get; private set; }
         private ObservableCollection<MemoDto> memoDtos;
 
-        public MemoViewModel()
+        public MemoViewModel(IMemoService service)
         {
+            this.service = service;
             memoDtos = new ObservableCollection<MemoDto>();
             AddMemoCommand = new DelegateCommand(AddMemo);
             CreateMemoList();
@@ -27,6 +31,7 @@ namespace MyToDO.ViewModels
             IsRightDrawerOpen = true;
         }
         private bool isRightDrawerOpen;
+        private readonly IMemoService service;
 
         public bool IsRightDrawerOpen
         {
@@ -39,16 +44,18 @@ namespace MyToDO.ViewModels
             get { return memoDtos; }
             set { memoDtos = value; RaisePropertyChanged(); }
         }
-        void CreateMemoList()
+        async void CreateMemoList()
         {
-            for (int i = 0; i < 20; i++)
+          var memoResult =await service.GetAllAsync(new MyToDo.Shared.Parameters.QueryParameter()
             {
-                MemoDtos.Add(new MemoDto()
+                PageIndex = 0,
+                PageSize = 100,
+            });
+            if(memoResult.Status)
+                foreach (var item in memoResult.Result.Items)
                 {
-                    Title = "标题" + i,
-                    Content = "测试数据"
-                });
-            }
+                    MemoDtos.Add(item);
+                }
         }
 
     }
